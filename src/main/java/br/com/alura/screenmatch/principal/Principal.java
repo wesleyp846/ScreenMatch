@@ -30,6 +30,8 @@ public class Principal {
             var menu = """
                     1 - Buscar séries
                     2 - Buscar episódios
+                    3 - Listar series já buscadas
+                    
                     0 - Sair                                 
                     """;
 
@@ -44,6 +46,9 @@ public class Principal {
                 case 2:
                     buscarEpisodioPorSerie();
                     break;
+                case 3:
+                    listarSeriesBuscadas();
+                    break;    
                 case 0:
                     System.out.println("Saindo...");
                     break;
@@ -51,6 +56,10 @@ public class Principal {
                     System.out.println("Opção inválida");
             }
         }
+    }
+
+    private void listarSeriesBuscadas() {
+        dadosSeries.forEach(System.out::println);
     }
 
     private void buscarSerieWeb() {
