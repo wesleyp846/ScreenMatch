@@ -20,6 +20,8 @@ public class Principal {
     private ConverteDados conversor = new ConverteDados();
     private final String ENDERECO = "https://www.omdbapi.com/?t=";
     private final String API_KEY = "&apikey=6585022c";
+    //Lista de series ja buscadas na internet
+    private List<DadosSerie> dadosSeries = new ArrayList<>();
 
     public void exibeMenu() {
         //Adição do loop infinito
@@ -53,6 +55,8 @@ public class Principal {
 
     private void buscarSerieWeb() {
         DadosSerie dados = getDadosSerie();
+        //Toda serie buscada é adicionada a essa lista
+        dadosSeries.add(dados);
         System.out.println(dados);
     }
 
